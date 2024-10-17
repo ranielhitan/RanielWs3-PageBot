@@ -7,6 +7,7 @@ fs = require('fs'),
 api = require('./ws3/api'),
 app = express(),
 VERIFY_TOKEN = 'ws3',
+PASSWORD_ADMIN = process.env.pass || 'ws3',
 PAGE_ACCESS_TOKEN = api.PAGE_ACCESS_TOKEN,
 PORT = process.env.PORT || 3000
 
@@ -44,7 +45,7 @@ app.get("/restart", async (req, res) => {
   try {
   if (!pass)
   throw new Error("No password input.");
-  else if (pass !== process.env.pass)
+  else if (pass !== PASSWORD_ADMIN)
   throw new Error("Wrong password!");
   res.json({ status: "Restarting..."});
   process.exit(1);

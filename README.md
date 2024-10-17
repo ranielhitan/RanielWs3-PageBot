@@ -5,6 +5,14 @@
 # Ws3 PageBot
 Created by Kenneth Aceberos
 
+# Features
+- **Mirai/autobot command structure** (Commands are in ``ws3/commands``)
+- **1 hour auto post** (You can change your own on ``page_bot.js``)
+- **Auto git pull on your repo every restart** (Need public) (Check on ``main.js``)
+- **With commands menu, quick replies and buttons** (You can customize your own)
+- **Webpage with some detail and restart bot feature**
+
+
 This page bot is originally from: [https://github.com/muhammadoren/Ai-Page-Bot](https://github.com/muhammadoren/Ai-Page-Bot).
 
 **Ws3 PageBot is a dedication to her (my gf).**
@@ -87,6 +95,11 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
 - You're Done
 ![](Screenshot_20241017-201238_1.png)
 **You can now use the bot to all users once they messaged you**
+
+## Admin Password for Restart Bot
+- Default Password is: ``ws3``
+## I RECOMMEND YOU TO CHANGE PASSWORD BY ENCRYPT OR PUT THE PASSWORD BY ENVIRONMENTS IF YOU DON'T WANT TO BE PLAYED AND FOOLED BY SOMEONE.
+## I'M WARNING YOU ⚠️
 ## Credits
   - This file is originally from muhammadoren's [Ai-Page-Bot](https://github.com/muhammadoren/Ai-Page-Bot).
   - **Joshua sy (deku)** - API
@@ -94,5 +107,6 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
     
   **Note!**
    - You are free to modify this file. You can do whatever you want.
+   
 
 </html>
