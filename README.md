@@ -6,9 +6,9 @@
 Created by Kenneth Aceberos
 
 # Features
-- **Mirai/autobot command structure** (Commands are in ``ws3/commands``)
-- **1 hour auto post** (You can change your own on ``page_bot.js``)
-- **Auto git pull on your repo every restart** (Need public) (Check on ``main.js``)
+- **Mirai/autobot command structure** (Commands are in `ws3/commands`)
+- **1 hour auto post** (You can change your own on `page_bot.js`)
+- **Auto git pull on your repo every restart** (Need public) (Check on `main.js` for reference)
 - **With commands menu, quick replies and buttons** (You can customize your own)
 - **Webpage with some detail and restart bot feature**
 
@@ -45,14 +45,40 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
    - Click on "Add or Remove Pages".
    - Follow the prompts to connect your Facebook Page.
    - Once connected, generate a Page Access Token by clicking "Generate Token". Copy this token for later use.
-
+   
 ## Step 5: Set Up Webhooks
- 1. **Subscribe "feed" on Webhooks section**
-   - Go to menu then find **Webhooks**. Locate "feed", once you see it change the version to v21.0
-   ![](Screenshot_20241017-200016_1.png)
-   - After you changed it click SUBSCRIBE
-   ![](Screenshot_20241017-195912_1.png)
-   - Now you're Done
+  1. **Create a web service on Render / or any hosting site**
+   - Open [render.com](https://render.com)
+   - Sign Up and connect by your GitHub account.
+   - Click 3 dots > New > Web Service
+   - Go back to Github, Fork this repo and go back to render.
+   - Refresh then find the repo that you fork.
+   
+   **NOW FOR THE IMPORTANT PARTS**
+    
+   - Build command: `npm install`
+   - Start command: `node main.js`
+   - On Environmental Variables:
+   Create your own password for the restart bot feature.
+    
+   Key: `pass`
+    
+   Value: `<your desired password>`
+   - See and follow the picture below: 
+   ![](Screenshot_20241017-213252_1.png)
+   - Default Password is: `ws3`
+   - I RECOMMEND YOU TO CHANGE PASSWORD BY ENCRYPT OR PUT THE PASSWORD BY ENVIRONMENTS IF YOU DON'T WANT TO BE PLAYED AND FOOLED BY SOMEONE. I'M WARNING YOU ⚠️
+   
+   - And now for the git pull feature, add an environmental variable again:
+   
+   Key: `repo`
+   
+   Value: `<your forked repo>`
+    
+   - on Advanced section: **DO NOT FORGET TO TURN OFF (No) AUTO DEPLOY for GIT PULL**
+   ![](Screenshot_20241017-213456_1.png)
+   - Then Create Web Service
+   **Once it's done lets proceed to the next procedure.**
   2. **Configure the Webhooks (Messenger)**
    - In the Messenger settings, scroll to the "Webhooks" section.
    - Click on "Setup Webhooks".
@@ -63,11 +89,13 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
      - `messages`
      - `messaging_optins`
      - `messaging_postbacks`
+     - `feed`
    - Click "Verify and Save".
+
 ## Step 6: Add Page Subscriptions
 1. **Subscribe to Page Events:**
    - Still in the Webhooks section, under "Page Subscriptions", select the page you connected earlier.
-   - Ensure that `messages`, `messaging_optins`, and `messaging_postbacks` are selected for this subscription.
+   - Ensure that `messages`, `messaging_optins`, `messaging_postbacks`, and `feed` are selected for this subscription.
 
 ## Step 7: Get Your Page Access Token
 1. **Retrieve Token:**
@@ -78,7 +106,16 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
 1. **Configure Bot with Token:**
    - Paste the Page Access Token into `ws3/api.js` on `const token`
    
-   **You can also input your token on Environments**`(process.env.token)`
+   I recommend you for your security: **Put your token on Environment Variables**
+   Just edit the environment variables on "Environments" tab
+   - Add an environmental variable:
+    
+   Key: `token`
+   
+   Value: `<your copied page access token>`
+   
+   - Then SAVE 
+   
 ## Step 9: Test Your Messenger Bot
 1. **Test Bot Functionality:**
    - Open your connected Facebook Page.
@@ -92,14 +129,14 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
 
 ## How to switch to Live Mode?
 - Find **App Mode** then switch to Live
+- Follow some requirements before you can switch to Live Mode.
+
+**(I think it's Privacy Policy and Terms of Service requires it, Just use the facebook's privacy policy and terms of Service.)**
+
 - You're Done
 ![](Screenshot_20241017-201238_1.png)
 **You can now use the bot to all users once they messaged you**
 
-## Admin Password for Restart Bot
-- Default Password is: ``ws3``
-## I RECOMMEND YOU TO CHANGE PASSWORD BY ENCRYPT OR PUT THE PASSWORD BY ENVIRONMENTS IF YOU DON'T WANT TO BE PLAYED AND FOOLED BY SOMEONE.
-## I'M WARNING YOU ⚠️
 ## Credits
   - This file is originally from muhammadoren's [Ai-Page-Bot](https://github.com/muhammadoren/Ai-Page-Bot).
   - **Joshua sy (deku)** - API
