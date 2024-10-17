@@ -137,6 +137,11 @@ Before starting, ensure you have a Facebook Page. If you don't have one, create 
 ![](Screenshot_20241017-201238_1.png)
 **You can now use the bot to all users once they messaged you**
 
+## How to Change Admins
+- To get the ID: Type /id
+- ID should be like this: `8439419946124905`—and yes it's not a user ID from your profile
+- To change the admin list — locate to `ws3/api.js` and find the `admin` array[].
+
 ## Credits
   - This file is originally from muhammadoren's [Ai-Page-Bot](https://github.com/muhammadoren/Ai-Page-Bot).
   - **Joshua sy (deku)** - API
