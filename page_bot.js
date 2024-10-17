@@ -6,7 +6,7 @@ os = require('os'),
 fs = require('fs'),
 api = require('./ws3/api'),
 app = express(),
-VERIFY_TOKEN = 'pagebot',
+VERIFY_TOKEN = 'ws3',
 PAGE_ACCESS_TOKEN = api.PAGE_ACCESS_TOKEN,
 PORT = process.env.PORT || 3000
 
