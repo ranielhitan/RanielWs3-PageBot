@@ -33,8 +33,10 @@ module.exports = {
         access_token: PAGE_ACCESS_TOKEN
       }
     });
+    if (dataCmd.data.data.commands){
     if (dataCmd.data.data[0].commands[0].commands.length === commandsPayload.length)
     return console.log("Commands not changed");
+    }
     const loadCmd = await axios.post(`https://graph.facebook.com/v21.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`, {
       commands: [
         {
